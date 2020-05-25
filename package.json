@@ -1,0 +1,22 @@
+{
+  "name": "8ssedt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "gypfile": true,
+  "scripts": {
+    "build": "node-gyp rebuild",
+    "clean": "node-gyp clean",
+    "test": "ava"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^3.8.2",
+    "node-gyp": "^6.1.0"
+  },
+  "dependencies": {
+    "canvas": "^2.6.1",
+    "node-addon-api": "^3.0.0"
+  }
+}
