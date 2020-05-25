@@ -1,3 +1,5 @@
+![](https://github.com/zqsd/8ssedt/workflows/Node.js%20CI/badge.svg)
+
 Introduction
 ============
 This package generates [2d signed distance field](https://en.wikipedia.org/wiki/Distance_transform).  
