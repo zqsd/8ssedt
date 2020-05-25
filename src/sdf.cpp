@@ -155,7 +155,7 @@ Napi::Value sdf::GenerateWrapped(const Napi::CallbackInfo& info) {
     assert(info[1].IsTypedArray());
     assert(info[2].IsNumber());
     assert(info[3].IsNumber());
-    assert(info.Length() == 4 || info.Length() == 5 && info[4].IsObject());
+    assert(info.Length() == 4 || (info.Length() == 5 && info[4].IsObject()));
 
     Napi::Uint8Array dst = info[0].As<Napi::Uint8Array>();
     uint8_t* dstPtr = reinterpret_cast<uint8_t*>(dst.ArrayBuffer().Data());
