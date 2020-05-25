@@ -107,7 +107,8 @@ void generate(Grid& grid) {
 
 template<unsigned int stride, typename T>
 void set(uint8_t* data, int x, int y, int w, int channel, int threshold, T value) {
-    data[stride * (y * w + x) + channel] = (int8_t)(std::round(std::min<T>(255, std::max<T>(value + threshold, 0))));
+    T signe = std::round(value + threshold);
+    data[stride * (y * w + x) + channel] = (uint8_t)(std::min<T>(255, std::max<T>(signe, 0)));
 }
 
 template<typename D, unsigned int stride>
