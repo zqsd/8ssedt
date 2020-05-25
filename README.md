@@ -51,10 +51,22 @@ generateSdf(dst, src, width, height, {
     radius: 1, // length of SDF
 });
 
-for(let y = 0; y < height; y++) {
-    console.log(dst.slice(y * w, (y + 1) * w).join(d => `${d}\t`));
-}
-/*
+console.log([...Array(h).keys()].map(y => {
+    return [...Array(w).keys()].map(x => {
+        return String(dst[4 * (y * w + x)] - 127).padStart(4, ' ');
+    });
+}).join('\n'));
 
+/* Displays:
+   4,   3,   2,   2,   2,   2,   2,   2,   3,   4
+   3,   2,   1,   1,   1,   1,   1,   1,   2,   3
+   3,   2,   1,   0,   0,   0,   0,   1,   2,   3
+   3,   2,   1,   0,  -1,  -1,   0,   1,   2,   3
+   3,   2,   1,   0,  -1,  -1,   0,   1,   2,   3
+   3,   2,   1,   0,  -1,  -1,   0,   1,   2,   3
+   3,   2,   1,   0,  -1,  -1,   0,   1,   2,   3
+   3,   2,   1,   0,   0,   0,   0,   1,   2,   3
+   3,   2,   1,   1,   1,   1,   1,   1,   2,   3
+   4,   3,   2,   2,   2,   2,   2,   2,   3,   4
 */
 ```
