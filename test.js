@@ -26,7 +26,9 @@ function arrayToString(dst, w, h, stride = 4, channel = 0) {
 test('5x5 rgba', async t => {
     const dst = new Uint8Array(src_5x5.length);
 
-    generateSdf(dst, src_5x5, 5, 5, {
+    generateSdf(dst, src_5x5, {
+        width: 5,
+        height: 5,
         stride: 4
     });
 
@@ -40,7 +42,9 @@ test('5x5 rgba', async t => {
 test('short radius', async t => {
     const dst = new Uint8Array(src_5x5.length);
 
-    generateSdf(dst, src_5x5, 5, 5, {
+    generateSdf(dst, src_5x5, {
+        width: 5,
+        height: 5,
         stride: 4,
         radius: 2,
     });
@@ -63,7 +67,10 @@ test('big box', async t => {
         }
     }
 
-    generateSdf(dst, src, w, h);
+    generateSdf(dst, src, {
+        width: w,
+        height: h,
+    });
 
     t.is(arrayToString(dst, w, h, 1), `   4,   3,   2,   2,   2,   2,   2,   2,   3,   4
    3,   2,   1,   1,   1,   1,   1,   1,   2,   3
